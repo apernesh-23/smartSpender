@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getAuthToken } from './auth';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://smartbackend-kappa.vercel.app//api';
+const API_URL =  'https://smartbackend-kappa.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_URL,
