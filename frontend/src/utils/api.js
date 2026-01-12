@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getAuthToken } from './auth';
 
-const API_URL =  'https://smartspender-backend.onrender.com';
+const API_URL =  'https://smartspender-backend.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
