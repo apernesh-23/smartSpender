@@ -8,7 +8,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'https://smartfront-l8iv.onrender.com',
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
