@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import api from '../utils/api';
 import './Insights.css';
 
@@ -11,14 +11,13 @@ const Insights = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    const fetchAllInsights = async () => {
+      fetchBudgetPrediction();
+      fetchSpendingPatterns();
+      fetchAnomalies();
+    };
     fetchAllInsights();
   }, []);
-
-  const fetchAllInsights = async () => {
-    fetchBudgetPrediction();
-    fetchSpendingPatterns();
-    fetchAnomalies();
-  };
 
   const fetchBudgetPrediction = async () => {
     setLoading(prev => ({ ...prev, prediction: true }));
