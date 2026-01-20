@@ -41,6 +41,7 @@ Copy-Item .env.example .env
 ```
 
 **Example .env file:**
+
 ```
 MONGODB_URI=mongodb://localhost:27017/smartspender
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
@@ -49,6 +50,7 @@ AI_SERVICE_URL=http://localhost:5001
 ```
 
 **For MongoDB Atlas:**
+
 ```
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/smartspender?retryWrites=true&w=majority
 ```
@@ -95,6 +97,7 @@ npm install
 You'll need to run three services simultaneously. Open three terminal windows:
 
 #### Terminal 1 - MongoDB (if using local MongoDB)
+
 ```bash
 # Start MongoDB service
 # On Windows (if installed as service, it may already be running):
@@ -105,6 +108,7 @@ You'll need to run three services simultaneously. Open three terminal windows:
 ```
 
 #### Terminal 2 - Backend Server
+
 ```bash
 cd backend
 npm start
@@ -113,6 +117,7 @@ npm start
 ```
 
 #### Terminal 3 - AI Service
+
 ```bash
 cd ai-service
 # Make sure virtual environment is activated
@@ -120,6 +125,7 @@ python app.py
 ```
 
 #### Terminal 4 - Frontend (Development Server)
+
 ```bash
 cd frontend
 npm start
@@ -148,25 +154,30 @@ The frontend will automatically open in your browser at `http://localhost:3000`
 ## Troubleshooting
 
 ### MongoDB Connection Issues
+
 - Ensure MongoDB is running (if using local instance)
 - Check your connection string in `.env`
 - For Atlas, ensure your IP is whitelisted
 
 ### Port Already in Use
+
 - Backend (5000): Change `PORT` in `backend/.env`
 - AI Service (5001): Change `PORT` in `ai-service/.env` or environment
 - Frontend (3000): React will prompt to use a different port
 
 ### Python/Flask Issues
+
 - Ensure virtual environment is activated
 - Check Python version: `python --version` (should be 3.8+)
 - Reinstall dependencies: `pip install -r requirements.txt --force-reinstall`
 
 ### CORS Errors
+
 - Ensure backend CORS is configured correctly
 - Check that AI_SERVICE_URL matches the actual AI service URL
 
 ### AI Service Not Responding
+
 - Check if Flask app is running on correct port
 - Verify all Python dependencies are installed
 - Check Flask logs for errors
